@@ -1,0 +1,92 @@
+:root {
+  --shadow: 0 0 3px 1px rgba(0,0,0, 0.25);
+  --shadow-hover: 0 0 3px 1px #705141;
+
+  /**
+   * New colors: 
+   */
+  --clr-font-light: #808080;  
+  --clr-font-primary: #49454F;
+  --clr-font-accent: #705141;
+  --clr-info-bg: #F3F3F3;
+  --clr-font: #303030; 
+  --clr-info-light: #999999;
+  --clr-scrollbar: #165DFF;
+  --clr-bg-select: #ebebeb;
+
+  --clr-tooltip: rgba(0,0,0,0.8);
+
+  /**
+   * Monitoring colors:
+   */
+  --clr-err-event: #40F800;
+  --clr-err-info: #FFE500;
+  --clr-err-maintenance: #FF8D3A;
+  --clr-err-error: #FF0000;
+  --clr-err-tech-info: #0047FF;
+
+  --clr-err-event: #28a745;
+  --clr-err-info: #17a2b8;
+  --clr-err-maintenance: #ffc107;
+  --clr-err-error: #dc3545;
+  --clr-err-tech-info: #007bff;
+  --clr-err-disabled: gray;
+
+  --clr-err-light-event: #7ac28a;
+  --clr-err-light-info: #74a8b0;
+  --clr-err-light-maintenance: #fce9ae;
+  --clr-err-light-error: #cf9398;
+  --clr-err-light-tech-info: #a0c8f2;
+  --clr-err-light-disabled: #949494;
+
+  /**
+   * Admin colors
+   */
+  --admin-clr-bg: #0E1012;
+  --admin-clr-info-block-bg: #2B2B2B;
+  --admin-clr-info-block-border: #303030;
+  --admin-clr-font: #F2F2F2;
+  --admin-clr-font-accent: #3B96C4;
+  --admin-clr-font-light: #737373;
+
+  /**
+   * Admin monitoring colors
+   */
+  --admin-monitor-clr-event-font: #0C4B1E;
+  --admin-monitor-clr-event-bg: #4CE677;
+  --admin-monitor-clr-info-font: #00268E;
+  --admin-monitor-clr-info-bg: #96B2FF;
+  --admin-monitor-clr-maintenance-font: #733100;
+  --admin-monitor-clr-maintenance-bg: #FFA059;
+  --admin-monitor-clr-error-font: #4B0C0C;
+  --admin-monitor-clr-error-bg: #E45959;
+  --admin-monitor-clr-tech-info-font: #00268E;
+  --admin-monitor-clr-tech-info-bg: #7499FF;
+  --admin-monitor-clr-unknown-font: #2A353A;
+  --admin-monitor-clr-unknown-bg: #97AAB3;
+
+  /**
+   * Old colors: 
+   */
+  --clr-bg: #FBFBFB;
+  --clr-info-block-border: #D8D8D8; 
+
+  --clr-h1: #252423;
+  --clr-h2: #323130;
+
+  --clr-info-dark: #3F3E43;
+
+  --clr-badge: #8D8D8D;
+
+  --clr-info-positive: #3F8B48;
+  --clr-info-negative: #DF777F;
+  
+  --clr-tab-font: #42423F;
+  --clr-tab-bg: #F5F5F5;
+  --clr-tab-bg-active: #FFFFFF;
+  --clr-tab-border: #DEDEDE;
+  --clr-tab-active: #117865;
+
+  --clr-table-odd: #FFFFFF;
+  --clr-table-even: #EEEDED;
+}
