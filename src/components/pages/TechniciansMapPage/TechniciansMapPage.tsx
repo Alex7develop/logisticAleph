@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { YMaps, Map, Placemark, GeolocationControl } from '@pbe/react-yandex-maps';
+import {
+  YMaps,
+  Map,
+  Placemark,
+  GeolocationControl,
+} from '@pbe/react-yandex-maps';
 import axios from 'axios';
 
-import carIcon from '~/assets/icons/car.svg'; 
-
+import carIcon from '~/assets/icons/technic.png';
 
 interface Technician {
   id: string;
@@ -15,29 +19,32 @@ interface Technician {
 
 const TechniciansMapPage = () => {
   const [technicians, setTechnicians] = useState<Technician[]>([]);
-  const [userLocation, setUserLocation] = useState<[number, number]>([55.751244, 37.618423]); // Москва
+  const [userLocation, setUserLocation] = useState<[number, number]>([
+    55.751244, 37.618423,
+  ]); // Москва
 
   useEffect(() => {
-    if ("geolocation" in navigator) {
+    if ('geolocation' in navigator) {
       navigator.geolocation.getCurrentPosition(
         ({ coords }) => setUserLocation([coords.latitude, coords.longitude]),
-        (error) => console.error("Ошибка геолокации:", error)
+        (error) => console.error('Ошибка геолокации:', error)
       );
     }
   }, []);
 
   useEffect(() => {
     const fetchTechnicians = () => {
-      axios.get('https://backend.wmf24.ru/api/technicians')
-        .then(res => setTechnicians(res.data))
-        .catch(err => console.error('Ошибка обновления данных:', err));
+      axios
+        .get('https://backend.wmf24.ru/api/technicians')
+        .then((res) => setTechnicians(res.data))
+        .catch((err) => console.error('Ошибка обновления данных:', err));
     };
-  
-    fetchTechnicians(); 
-  
+
+    fetchTechnicians();
+
     const interval = setInterval(fetchTechnicians, 10000);
-  
-    return () => clearInterval(interval); 
+
+    return () => clearInterval(interval);
   }, []);
 
   const mapStyle = {
@@ -45,7 +52,7 @@ const TechniciansMapPage = () => {
     left: 0,
     top: 0,
     width: '100%',
-    height: '100%'
+    height: '100%',
   };
 
   return (
@@ -53,7 +60,7 @@ const TechniciansMapPage = () => {
       <YMaps>
         <Map state={{ center: userLocation, zoom: 11 }} style={mapStyle}>
           <GeolocationControl options={{ float: 'right' }} />
-          {technicians.map(tech => (
+          {technicians.map((tech) => (
             <Placemark
               key={tech.id}
               geometry={[tech.lat, tech.lon]}
