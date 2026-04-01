@@ -27,7 +27,7 @@ const TechniciansMapPage = () => {
     if ('geolocation' in navigator) {
       navigator.geolocation.getCurrentPosition(
         ({ coords }) => setUserLocation([coords.latitude, coords.longitude]),
-        (error) => console.error('Ошибка геолокации:', error)
+        (error) => console.error('Ошибка геолокации:', error),
       );
     }
   }, []);
@@ -35,7 +35,7 @@ const TechniciansMapPage = () => {
   useEffect(() => {
     const fetchTechnicians = () => {
       axios
-        .get('https://backend.wmf24.ru/api/technicians')
+        .get('https://backendconnect.alephtrade.com/api/technicians')
         .then((res) => setTechnicians(res.data))
         .catch((err) => console.error('Ошибка обновления данных:', err));
     };
